@@ -1,0 +1,1 @@
+globe.jpg was found [here](http://www.publicdomainpictures.net/view-image.php?image=127827&picture=america-globe) and is reused as the favicon

@@ -1,0 +1,12 @@
+# Nanobox.io boxfile, to deploy, use the `nanobox` cli and run `nanobox deploy`
+
+run.config:
+  engine: golang
+
+  engine.config:
+    fetch: go get ./...
+    build: go build --ldflags="-s"
+    package: github.com/glinton/gola
+
+web.gola:
+  start: ./gola
