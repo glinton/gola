@@ -1,5 +1,6 @@
 // build and run this in order to serve up static js api client page that will connect to it
 
+// Gola is a simple golang `Hello World` "full-stack" application.
 package main
 
 import (
