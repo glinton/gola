@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strings"
 	"time"
 )
 
@@ -89,9 +88,7 @@ func logHandler(h http.Handler) http.Handler {
 
 		remoteAddr := req.RemoteAddr
 		if fwdFor := req.Header.Get("X-Forwarded-For"); len(fwdFor) > 0 {
-			// get actual remote (last is oldest remote addr)
-			fwds := strings.Split(string(fwdFor), ",")
-			remoteAddr = strings.Trim(fwds[len(fwds)-1], " ")
+			remoteAddr = fwdFor
 		}
 
 		fmt.Printf("%s %s %s%s %s %d(%d) - %s [User-Agent: %s] (%s)\n",

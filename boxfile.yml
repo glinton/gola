@@ -5,12 +5,13 @@ run.config:
 
   engine.config:
     fetch: go get ./...
-    build: go build --ldflags="-s"
+    build: go build --ldflags="-s" -o gola
     package: github.com/glinton/gola
 
 deploy.config:
   extra_steps:
     - cp -r $CODE_DIR/app $APP_DIR/app # Move static files into 'build'
+    - cp $CODE_DIR/gola $APP_DIR/gola
 
 web.gola:
   start: ./gola
